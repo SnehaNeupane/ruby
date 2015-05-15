@@ -1,0 +1,1 @@
+puts 1 unless a == 1
