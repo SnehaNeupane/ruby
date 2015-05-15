@@ -1,10 +1,10 @@
 def print(condition)
 	if condition == 1
-		puts 'a'
+		puts 'hi'
 	elsif condition == 2
-		puts 'd'
+		puts 'www'
 	else
-		puts 'f'
+		puts 'asd'
 	end 
 end
 print 3
