@@ -1,41 +1,44 @@
 class JukeBox
 	
 	def initialize(music)
-		@no_of_playlist = 0
+		@count = 0
 		@music = music
 	end
 	def play
-		puts "The music playing is #{@music}"
+		
+			puts "The music playing is #{@music[@count]}"
 	end
 
-	def add_song
-		puts "The added music is #{@music}"
+	def add_song(song1)
+			
+		
+		puts "The added music is #{song1}"
+		@music.push(song1)
 	end
 
 	def next
-		puts "Next music is #{@music}"
+	
+		@count += 1
+		puts "Next music is #{@music[@count]}"
 	end
+
 
 	def prev
-		puts "The previous music was #{@music}"
+		@count -= 1
+		puts "The previous music was #{@music[@count]}"
 	end
 
+
 	def shuffle
-		puts "The music playing after shuffling #{@music}"
+
+		puts "The music playing after shuffling #{@music[rand(0..@music.length-1)]}"
 	end
 end
 
+a = JukeBox.new (['asdf.mp3', 'ggg.mp3', 'adf.mp3'])
+a.play
+a.add_song('song1')
+a.next
+a.prev
+a.shuffle
 
-JukeBox.new('asdf.mp3').play
-JukeBox.new('ggg.mp3').add_song
-JukeBox.new('adf.mp3').next
-JukeBox.new('asdf.mp3').prev
-JukeBox.new('ggg.mp3').shuffle
-
-#playlist.play
-#playlist.add_song
-#playlist.play #=> "asdf.mp3"
-#playlist.add_song("ggg.mp3")
-#playlist.next #=> "adf.mp3"
-#playlist.prev #=> "asdf.mp3"
-#playlist.shuffle #=> "ggg.mp3"
